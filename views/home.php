@@ -18,9 +18,10 @@
             <a class="is-current" href="index.php" aria-current="page">Accueil</a>
             <a href="#catalogue">Nos livres</a>
             <a href="#fonctionnement">Comment ça marche</a>
+            <a href="index.php?page=connexion">Connexion</a>
         </nav>
 
-        <a class="header-link" href="#catalogue">Découvrir les livres <span aria-hidden="true">↗</span></a>
+        <a class="header-link" href="index.php?page=inscription">Créer un compte <span aria-hidden="true">↗</span></a>
     </header>
 
     <main>
