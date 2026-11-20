@@ -8,24 +8,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="auth-page">
-    <header class="site-header auth-header">
-        <a class="brand" href="index.php" aria-label="TomTroc, accueil">
-            <span class="brand-mark" aria-hidden="true">t.</span>
-            <span>TomTroc</span>
-        </a>
-        <a class="header-link" href="index.php">Retour à l’accueil <span aria-hidden="true">↗</span></a>
-    </header>
+    <?php require __DIR__ . '/../partials/header.php'; ?>
 
     <main class="auth-main">
-        <section class="auth-card" aria-labelledby="auth-title">
-            <div class="auth-aside" aria-hidden="true">
-                <p class="eyebrow">Ravi de vous retrouver</p>
-                <p class="auth-quote">Les histoires<br>se partagent<br><em>mieux à plusieurs.</em></p>
-                <span class="auth-aside-note">TomTroc · La bibliothèque qui circule</span>
-            </div>
-
+        <section class="auth-card auth-card-login" aria-labelledby="auth-title">
             <div class="auth-form-wrap">
-                <p class="eyebrow">Votre espace lecteur</p>
+                <p class="eyebrow">Ravi de vous retrouver</p>
                 <h1 id="auth-title">Connexion</h1>
                 <p class="auth-intro">Retrouvez votre bibliothèque et vos conversations.</p>
 
@@ -43,7 +31,12 @@
                     <button class="button button-dark auth-submit" type="submit">Se connecter <span aria-hidden="true">→</span></button>
                 </form>
 
+                <p class="auth-quote-below">Les histoires se partagent mieux à plusieurs.</p>
                 <p class="auth-switch">Pas encore de compte ? <a href="index.php?page=inscription">Créer un compte</a></p>
+            </div>
+
+            <div class="auth-photo">
+                <img src="public/images/bibliotheque.jpg.webp" alt="Une bibliothèque remplie de livres à partager">
             </div>
         </section>
     </main>

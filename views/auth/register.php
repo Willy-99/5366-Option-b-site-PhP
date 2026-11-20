@@ -8,24 +8,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="auth-page">
-    <header class="site-header auth-header">
-        <a class="brand" href="index.php" aria-label="TomTroc, accueil">
-            <span class="brand-mark" aria-hidden="true">t.</span>
-            <span>TomTroc</span>
-        </a>
-        <a class="header-link" href="index.php">Retour à l’accueil <span aria-hidden="true">↗</span></a>
-    </header>
+    <?php require __DIR__ . '/../partials/header.php'; ?>
 
     <main class="auth-main">
-        <section class="auth-card" aria-labelledby="auth-title">
-            <div class="auth-aside" aria-hidden="true">
-                <p class="eyebrow">Bienvenue chez TomTroc</p>
-                <p class="auth-quote">Une étagère<br>pleine d’histoires<br><em>à découvrir.</em></p>
-                <span class="auth-aside-note">TomTroc · La bibliothèque qui circule</span>
-            </div>
-
+        <section class="auth-card auth-card-register" aria-labelledby="auth-title">
             <div class="auth-form-wrap">
-                <p class="eyebrow">Rejoignez les lecteurs</p>
+                <p class="eyebrow">Bienvenue chez TomTroc</p>
                 <h1 id="auth-title">Créer un compte</h1>
                 <p class="auth-intro">Quelques informations suffisent pour commencer.</p>
 
@@ -46,7 +34,13 @@
                     <button class="button button-dark auth-submit" type="submit">Créer mon compte <span aria-hidden="true">→</span></button>
                 </form>
 
+                <p class="auth-quote-below">Les histoires se partagent mieux à plusieurs.</p>
                 <p class="auth-switch">Déjà membre ? <a href="index.php?page=connexion">Se connecter</a></p>
+            </div>
+
+            <div class="auth-photo">
+                <img src="public/images/bibliotheque-inscription.jpg" alt="Intérieur lumineux d’une bibliothèque avec des étagères et des fauteuils">
+                <a class="image-credit" href="https://unsplash.com/photos/a-library-interior-with-bookshelves-and-chairs-tR5lEkWTkg8" target="_blank" rel="noopener noreferrer">Photo : Brooke Balentine / Unsplash</a>
             </div>
         </section>
     </main>

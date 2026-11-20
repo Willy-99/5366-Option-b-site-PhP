@@ -7,6 +7,7 @@ final class AuthController
     public function login(): void
     {
         $pageTitle = 'Connexion - TomTroc';
+        $currentPage = 'connexion';
         $formNotice = $this->getFormNotice('connexion');
 
         require __DIR__ . '/../../views/auth/login.php';
@@ -15,6 +16,7 @@ final class AuthController
     public function register(): void
     {
         $pageTitle = 'Inscription - TomTroc';
+        $currentPage = 'inscription';
         $formNotice = $this->getFormNotice('inscription');
 
         require __DIR__ . '/../../views/auth/register.php';
