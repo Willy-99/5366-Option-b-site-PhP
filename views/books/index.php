@@ -42,14 +42,19 @@
                     <?php foreach ($books as $book): ?>
                         <article class="book-card">
                             <div class="cover cover-<?= htmlspecialchars($book->getCoverColor(), ENT_QUOTES, 'UTF-8') ?>">
-                                <span class="cover-label"><?= htmlspecialchars($book->getGenre(), ENT_QUOTES, 'UTF-8') ?></span>
-                                <span class="cover-title"><?= htmlspecialchars($book->getTitle(), ENT_QUOTES, 'UTF-8') ?></span>
-                                <span class="cover-author"><?= htmlspecialchars($book->getAuthor(), ENT_QUOTES, 'UTF-8') ?></span>
+                                <?php if ($book->getImagePath() !== null): ?>
+                                    <img class="cover-image" src="<?= htmlspecialchars($book->getImagePath(), ENT_QUOTES, 'UTF-8') ?>" alt="Couverture du livre <?= htmlspecialchars($book->getTitle(), ENT_QUOTES, 'UTF-8') ?>" loading="lazy">
+                                <?php else: ?>
+                                    <span class="cover-label"><?= htmlspecialchars($book->getGenre(), ENT_QUOTES, 'UTF-8') ?></span>
+                                    <span class="cover-title"><?= htmlspecialchars($book->getTitle(), ENT_QUOTES, 'UTF-8') ?></span>
+                                    <span class="cover-author"><?= htmlspecialchars($book->getAuthor(), ENT_QUOTES, 'UTF-8') ?></span>
+                                <?php endif; ?>
                             </div>
                             <div class="book-info">
                                 <div>
                                     <h3><?= htmlspecialchars($book->getTitle(), ENT_QUOTES, 'UTF-8') ?></h3>
                                     <p><?= htmlspecialchars($book->getAuthor(), ENT_QUOTES, 'UTF-8') ?></p>
+                                    <p class="book-seller">Proposé par <?= htmlspecialchars($book->getSellerPseudo(), ENT_QUOTES, 'UTF-8') ?></p>
                                 </div>
                                 <span class="available">Disponible</span>
                             </div>

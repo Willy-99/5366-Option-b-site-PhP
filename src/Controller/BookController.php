@@ -12,7 +12,9 @@ final class BookController
     {
         $pageTitle = 'Nos livres - TomTroc';
         $currentPage = 'livres';
-        $searchTerm = trim((string) ($_GET['q'] ?? ''));
+        $searchTerm = isset($_GET['q']) && is_string($_GET['q'])
+            ? trim($_GET['q'])
+            : '';
         $books = $this->bookRepository->findAvailableBooks($searchTerm);
 
         require __DIR__ . '/../../views/books/index.php';

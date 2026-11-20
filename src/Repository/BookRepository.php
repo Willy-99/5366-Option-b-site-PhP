@@ -4,25 +4,53 @@ declare(strict_types=1);
 
 final class BookRepository
 {
+    public function __construct(private PDO $connection)
+    {
+    }
+
     /**
      * @return Book[]
      */
     public function findAvailableBooks(string $searchTerm = ''): array
     {
-        $books = [
-            new Book('Les heures tranquilles', 'Élise Moreau', 'Roman', 'sage'),
-            new Book("Là où l'on revient", 'Noé Bernard', 'Récit', 'terracotta'),
-            new Book('La couleur du silence', 'Mila Perrin', 'Littérature', 'blue'),
-            new Book('Un été à soi', 'Louis Arnaud', 'Roman', 'yellow'),
-        ];
+        $sql = <<<'SQL'
+            SELECT
+                books.id,
+                books.title,
+                books.author,
+                books.genre,
+                books.image_path,
+                books.cover_color,
+                books.is_available,
+                users.pseudo AS seller_pseudo
+            FROM books
+            INNER JOIN users ON users.id = books.owner_id
+            WHERE books.is_available = 1
+            SQL;
 
         if ($searchTerm === '') {
-            return $books;
+            $statement = $this->connection->query($sql . ' ORDER BY books.created_at DESC, books.id DESC');
+        } else {
+            $statement = $this->connection->prepare(
+                $sql . ' AND books.title LIKE :title ORDER BY books.created_at DESC, books.id DESC'
+            );
+            $statement->execute(['title' => '%' . $searchTerm . '%']);
         }
 
-        return array_values(array_filter(
-            $books,
-            static fn (Book $book): bool => stripos($book->getTitle(), $searchTerm) !== false
-        ));
+        $rows = $statement->fetchAll();
+
+        return array_map(
+            static fn (array $row): Book => new Book(
+                (int) $row['id'],
+                $row['title'],
+                $row['author'],
+                $row['genre'],
+                $row['image_path'],
+                $row['cover_color'],
+                $row['seller_pseudo'],
+                (bool) $row['is_available']
+            ),
+            $rows
+        );
     }
 }
