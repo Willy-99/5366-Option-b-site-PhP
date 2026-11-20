@@ -20,7 +20,7 @@
                 <input type="hidden" name="page" value="livres">
                 <label class="visually-hidden" for="book-search">Rechercher un livre par son titre</label>
                 <input id="book-search" type="search" name="q" value="<?= htmlspecialchars($searchTerm, ENT_QUOTES, 'UTF-8') ?>" placeholder="Rechercher un titre">
-                <button class="button button-dark" type="submit">Rechercher <span aria-hidden="true">→</span></button>
+                <button class="button button-green" type="submit">Rechercher <span aria-hidden="true">→</span></button>
             </form>
         </section>
 

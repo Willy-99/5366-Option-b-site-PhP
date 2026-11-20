@@ -31,7 +31,7 @@
                     <label for="password">Mot de passe</label>
                     <input id="password" name="password" type="password" autocomplete="new-password" placeholder="8 caractères minimum" minlength="8" required>
 
-                    <button class="button button-dark auth-submit" type="submit">Créer mon compte <span aria-hidden="true">→</span></button>
+                    <button class="button button-green auth-submit" type="submit">Créer mon compte <span aria-hidden="true">→</span></button>
                 </form>
 
                 <p class="auth-quote-below">Les histoires se partagent mieux à plusieurs.</p>

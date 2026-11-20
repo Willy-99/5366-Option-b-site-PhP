@@ -28,7 +28,7 @@
                     <label for="password">Mot de passe</label>
                     <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Votre mot de passe" required>
 
-                    <button class="button button-dark auth-submit" type="submit">Se connecter <span aria-hidden="true">→</span></button>
+                    <button class="button button-green auth-submit" type="submit">Se connecter <span aria-hidden="true">→</span></button>
                 </form>
 
                 <p class="auth-quote-below">Les histoires se partagent mieux à plusieurs.</p>

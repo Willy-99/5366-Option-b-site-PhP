@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Découvrez l’idée de partage de livres qui anime TomTroc.">
+    <meta name="description" content="Découvrez les valeurs de partage, de découverte et de communauté de Tom Troc.">
     <title><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8') ?></title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,12 +11,23 @@
     <?php require __DIR__ . '/partials/header.php'; ?>
 
     <main class="presentation-page">
-        <section class="presentation-hero" aria-labelledby="presentation-title">
-            <div class="section-wrap presentation-copy">
-                <p class="eyebrow">Notre idée</p>
-                <h1 id="presentation-title">Un livre lu est un livre à partager.</h1>
-                <p>TomTroc met en relation des lecteurs passionnés pour donner une nouvelle vie aux livres et faire de belles découvertes.</p>
-                <a class="button button-dark" href="index.php?page=livres">Découvrir les livres <span aria-hidden="true">→</span></a>
+        <figure class="presentation-banner-image">
+            <img src="public/images/livres-bibliotheque.jpg" alt="Rayonnages remplis de livres dans une bibliothèque">
+        </figure>
+
+        <div class="values-title-band">
+            <div class="section-wrap">
+                <p class="eyebrow">Notre démarche</p>
+                <h1 id="presentation-title">Nos valeurs</h1>
+            </div>
+        </div>
+
+        <section class="values-content" aria-labelledby="presentation-title">
+            <div class="section-wrap values-copy">
+                <p>Chez Tom Troc, nous mettons l'accent sur le partage, la découverte et la communauté. Nos valeurs sont ancrées dans notre passion pour les livres et notre désir de créer des liens entre les lecteurs. Nous croyons en la puissance des histoires pour rassembler les gens et inspirer des conversations enrichissantes.</p>
+                <p>Notre association a été fondée avec une conviction profonde : chaque livre mérite d'être lu et partagé.</p>
+                <p>Nous sommes passionnés par la création d'une plateforme conviviale qui permet aux lecteurs de se connecter, de partager leurs découvertes littéraires et d'échanger des livres qui attendent patiemment sur les étagères.</p>
+                <p class="values-signature">L'équipe de Tom Troc</p>
             </div>
         </section>
     </main>
