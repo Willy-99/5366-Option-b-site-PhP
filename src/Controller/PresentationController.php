@@ -9,6 +9,7 @@ final class PresentationController
         $pageTitle = 'Notre démarche - TomTroc';
         $currentPage = 'notre-projet';
 
-        require __DIR__ . '/../../views/presentation.php';
+        $view = new View($pageTitle, $currentPage);
+        $view->render('presentation');
     }
 }

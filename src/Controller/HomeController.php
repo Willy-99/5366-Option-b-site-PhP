@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 final class HomeController
 {
-    public function __construct(private BookRepository $bookRepository)
+    public function __construct(private LivreManager $livreManager)
     {
     }
 
@@ -12,8 +12,9 @@ final class HomeController
     {
         $pageTitle = 'TomTroc - Les livres se partagent';
         $currentPage = 'accueil';
-        $books = $this->bookRepository->findAvailableBooks();
+        $livres = $this->livreManager->getAllLivres();
 
-        require __DIR__ . '/../../views/home.php';
+        $view = new View($pageTitle, $currentPage);
+        $view->render('home', ['livres' => $livres]);
     }
 }

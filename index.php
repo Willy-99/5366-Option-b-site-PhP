@@ -2,13 +2,7 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/src/Model/Book.php';
-require_once __DIR__ . '/src/Core/Database.php';
-require_once __DIR__ . '/src/Repository/BookRepository.php';
-require_once __DIR__ . '/src/Controller/HomeController.php';
-require_once __DIR__ . '/src/Controller/BookController.php';
-require_once __DIR__ . '/src/Controller/AuthController.php';
-require_once __DIR__ . '/src/Controller/PresentationController.php';
+require_once __DIR__ . '/config/autoload.php';
 
 $page = $_GET['page'] ?? 'accueil';
 try {
@@ -22,15 +16,15 @@ try {
             (new AuthController())->register();
             break;
         case 'livres':
-            $bookRepository = new BookRepository(Database::getConnection());
-            (new BookController($bookRepository))->catalogue();
+            $livreManager = new LivreManager();
+            (new LivreController($livreManager))->catalogue();
             break;
         case 'notre-projet':
             (new PresentationController())->index();
             break;
         default:
-            $bookRepository = new BookRepository(Database::getConnection());
-            (new HomeController($bookRepository))->index();
+            $livreManager = new LivreManager();
+            (new HomeController($livreManager))->index();
     }
 } catch (PDOException | RuntimeException $exception) {
     $previousException = $exception->getPrevious();
@@ -44,5 +38,5 @@ try {
     // avec `php -S`), même si php.ini définit un fichier error_log séparé.
     error_log($logMessage, 4);
     http_response_code(503);
-    require __DIR__ . '/views/errors/database.php';
+    (new View('Base de données indisponible - TomTroc'))->render('errors/database');
 }

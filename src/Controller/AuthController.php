@@ -10,7 +10,8 @@ final class AuthController
         $currentPage = 'connexion';
         $formNotice = $this->getFormNotice('connexion');
 
-        require __DIR__ . '/../../views/auth/login.php';
+        $view = new View($pageTitle, $currentPage);
+        $view->render('auth/login', ['formNotice' => $formNotice]);
     }
 
     public function register(): void
@@ -19,7 +20,8 @@ final class AuthController
         $currentPage = 'inscription';
         $formNotice = $this->getFormNotice('inscription');
 
-        require __DIR__ . '/../../views/auth/register.php';
+        $view = new View($pageTitle, $currentPage);
+        $view->render('auth/register', ['formNotice' => $formNotice]);
     }
 
     private function getFormNotice(string $formName): ?string

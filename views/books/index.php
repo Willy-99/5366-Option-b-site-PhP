@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Parcourez les livres proposés à l’échange par les lecteurs TomTroc.">
     <title><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8') ?></title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <?php require __DIR__ . '/../partials/header.php'; ?>
@@ -27,7 +27,7 @@
         <section class="catalogue section-wrap catalogue-results" aria-label="Résultats du catalogue">
             <div class="section-heading">
                 <div>
-                    <p class="eyebrow"><?= count($books) ?> livre<?= count($books) > 1 ? 's' : '' ?> disponible<?= count($books) > 1 ? 's' : '' ?></p>
+                    <p class="eyebrow"><?= count($livres) ?> livre<?= count($livres) > 1 ? 's' : '' ?> disponible<?= count($livres) > 1 ? 's' : '' ?></p>
                     <h2><?= $searchTerm === '' ? 'À découvrir' : 'Résultats de recherche' ?></h2>
                 </div>
                 <?php if ($searchTerm !== ''): ?>
@@ -35,26 +35,26 @@
                 <?php endif; ?>
             </div>
 
-            <?php if ($books === []): ?>
+            <?php if ($livres === []): ?>
                 <p class="empty-results">Aucun livre ne correspond à « <?= htmlspecialchars($searchTerm, ENT_QUOTES, 'UTF-8') ?> ».</p>
             <?php else: ?>
                 <div class="book-grid">
-                    <?php foreach ($books as $book): ?>
+                    <?php foreach ($livres as $livre): ?>
                         <article class="book-card">
-                            <div class="cover cover-<?= htmlspecialchars($book->getCoverColor(), ENT_QUOTES, 'UTF-8') ?>">
-                                <?php if ($book->getImagePath() !== null): ?>
-                                    <img class="cover-image" src="<?= htmlspecialchars($book->getImagePath(), ENT_QUOTES, 'UTF-8') ?>" alt="Couverture du livre <?= htmlspecialchars($book->getTitle(), ENT_QUOTES, 'UTF-8') ?>" loading="lazy">
+                            <div class="cover cover-<?= htmlspecialchars($livre->getCoverColor(), ENT_QUOTES, 'UTF-8') ?>">
+                                <?php if ($livre->getImagePath() !== null): ?>
+                                    <img class="cover-image" src="<?= htmlspecialchars($livre->getImagePath(), ENT_QUOTES, 'UTF-8') ?>" alt="Couverture du livre <?= htmlspecialchars($livre->getTitle(), ENT_QUOTES, 'UTF-8') ?>" loading="lazy">
                                 <?php else: ?>
-                                    <span class="cover-label"><?= htmlspecialchars($book->getGenre(), ENT_QUOTES, 'UTF-8') ?></span>
-                                    <span class="cover-title"><?= htmlspecialchars($book->getTitle(), ENT_QUOTES, 'UTF-8') ?></span>
-                                    <span class="cover-author"><?= htmlspecialchars($book->getAuthor(), ENT_QUOTES, 'UTF-8') ?></span>
+                                    <span class="cover-label"><?= htmlspecialchars($livre->getGenre(), ENT_QUOTES, 'UTF-8') ?></span>
+                                    <span class="cover-title"><?= htmlspecialchars($livre->getTitle(), ENT_QUOTES, 'UTF-8') ?></span>
+                                    <span class="cover-author"><?= htmlspecialchars($livre->getAuthor(), ENT_QUOTES, 'UTF-8') ?></span>
                                 <?php endif; ?>
                             </div>
                             <div class="book-info">
                                 <div>
-                                    <h3><?= htmlspecialchars($book->getTitle(), ENT_QUOTES, 'UTF-8') ?></h3>
-                                    <p><?= htmlspecialchars($book->getAuthor(), ENT_QUOTES, 'UTF-8') ?></p>
-                                    <p class="book-seller">Proposé par <?= htmlspecialchars($book->getSellerPseudo(), ENT_QUOTES, 'UTF-8') ?></p>
+                                    <h3><?= htmlspecialchars($livre->getTitle(), ENT_QUOTES, 'UTF-8') ?></h3>
+                                    <p><?= htmlspecialchars($livre->getAuthor(), ENT_QUOTES, 'UTF-8') ?></p>
+                                    <p class="book-seller">Proposé par <?= htmlspecialchars($livre->getSellerPseudo(), ENT_QUOTES, 'UTF-8') ?></p>
                                 </div>
                                 <span class="available">Disponible</span>
                             </div>
