@@ -10,21 +10,32 @@ try {
         case 'connexion':
         case 'compte':
         case 'messagerie':
-            (new AuthController())->login();
+            $authController = new AuthController();
+            $authController->login();
             break;
         case 'inscription':
-            (new AuthController())->register();
+            $authController = new AuthController();
+            $authController->register();
             break;
         case 'livres':
-            $livreManager = new LivreManager();
-            (new LivreController($livreManager))->catalogue();
+            $livreController = new LivreController();
+            $livreController->showAllBook();
+            break;
+        case 'livre':
+            $livreController = new LivreController();
+            $livreController->showDetailBook();
+            break;
+        case 'modifier-livre':
+            $livreController = new LivreController();
+            $livreController->editBook();
             break;
         case 'notre-projet':
-            (new PresentationController())->index();
+            $presentationController = new PresentationController();
+            $presentationController->index();
             break;
         default:
-            $livreManager = new LivreManager();
-            (new HomeController($livreManager))->index();
+            $livreController = new LivreController();
+            $livreController->showLastBook();
     }
 } catch (PDOException | RuntimeException $exception) {
     $previousException = $exception->getPrevious();

@@ -52,7 +52,7 @@
                             </div>
                             <div class="book-info">
                                 <div>
-                                    <h3><?= htmlspecialchars($livre->getTitle(), ENT_QUOTES, 'UTF-8') ?></h3>
+                                    <h3><a href="index.php?page=livre&amp;id=<?= $livre->getId() ?>"><?= htmlspecialchars($livre->getTitle(), ENT_QUOTES, 'UTF-8') ?></a></h3>
                                     <p><?= htmlspecialchars($livre->getAuthor(), ENT_QUOTES, 'UTF-8') ?></p>
                                     <p class="book-seller">Proposé par <?= htmlspecialchars($livre->getSellerPseudo(), ENT_QUOTES, 'UTF-8') ?></p>
                                 </div>
