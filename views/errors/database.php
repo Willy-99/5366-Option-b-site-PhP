@@ -1,11 +1,9 @@
 <!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Base de données indisponible - TomTroc</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+<?php
+$pageDescription = 'La base de données TomTroc est momentanément indisponible.';
+require __DIR__ . '/../partials/head.php';
+?>
 <body>
     <main class="catalogue-intro">
         <p class="eyebrow">Configuration nécessaire</p>

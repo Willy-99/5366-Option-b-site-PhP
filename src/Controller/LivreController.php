@@ -33,7 +33,8 @@ final class LivreController
     /** Affiche le détail du livre demandé par son identifiant. */
     public function showDetailBook(): void
     {
-        $livre = $this->getRequestedBook();
+        $livreService = new LivreService();
+        $livre = $livreService->getLivreById($_GET['id'] ?? null);
 
         if ($livre === null) {
             $this->showBookNotFound();
@@ -47,7 +48,8 @@ final class LivreController
     /** Affiche le formulaire de modification d'un livre existant. */
     public function editBook(): void
     {
-        $livre = $this->getRequestedBook();
+        $livreService = new LivreService();
+        $livre = $livreService->getLivreById($_GET['id'] ?? null);
 
         if ($livre === null) {
             $this->showBookNotFound();
@@ -56,19 +58,6 @@ final class LivreController
 
         $view = new View('Modifier un livre - TomTroc', 'livres');
         $view->render('books/edit', ['livre' => $livre]);
-    }
-
-    private function getRequestedBook(): ?Livre
-    {
-        $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-
-        if (!is_int($id) || $id < 1) {
-            return null;
-        }
-
-        $livreManager = new LivreManager();
-
-        return $livreManager->getLivreById($id);
     }
 
     private function showBookNotFound(): void

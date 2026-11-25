@@ -1,11 +1,9 @@
 <!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8') ?></title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+<?php
+$pageDescription = 'Modifiez les informations d’un livre proposé sur TomTroc.';
+require __DIR__ . '/../partials/head.php';
+?>
 <body>
     <?php require __DIR__ . '/../partials/header.php'; ?>
 

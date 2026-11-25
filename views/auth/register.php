@@ -1,12 +1,9 @@
 <!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Créez votre compte TomTroc pour partager vos livres.">
-    <title><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8') ?></title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+<?php
+$pageDescription = 'Créez votre compte TomTroc pour partager vos livres.';
+require __DIR__ . '/../partials/head.php';
+?>
 <body class="auth-page">
     <?php require __DIR__ . '/../partials/header.php'; ?>
 

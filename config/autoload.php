@@ -6,6 +6,7 @@ $racine = dirname(__DIR__);
 $dossiersDeClasses = [
     $racine . '/Model/',
     $racine . '/Manager/',
+    $racine . '/Service/',
     $racine . '/src/Core/',
     $racine . '/src/Controller/',
 ];
