@@ -1,0 +1,26 @@
+.site-header {
+    width: 100%;
+    min-height: 82px;
+    padding: 0 max(6.5vw, 28px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+    background: var(--white);
+    border-bottom: 1px solid rgba(23, 51, 46, .07);
+}
+
+.brand { display: inline-flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 700; letter-spacing: -.7px; white-space: nowrap; }
+.brand-mark { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50% 50% 50% 4px; background: var(--green); color: white; font-family: var(--serif); font-size: 19px; font-style: italic; }
+.main-nav { display: flex; align-items: center; gap: 28px; margin-left: 18px; color: #5b6b65; font-size: 13px; }
+.main-nav a { transition: color .2s ease, font-weight .15s ease; }
+.main-nav a:hover, .main-nav .is-current { color: var(--green-dark); }
+.main-nav a:hover { font-weight: 700; }
+.header-actions { display: flex; align-items: center; gap: 13px; }
+.header-actions { margin-left: auto; }
+.header-login { display: inline-flex; align-items: center; gap: 7px; color: #52645d; font-size: 12px; font-weight: 600; transition: color .2s ease, font-weight .15s ease; }
+.header-icon { width: 17px; height: 17px; flex: 0 0 auto; }
+.header-login:hover { color: var(--green-dark); font-weight: 700; }
+.header-link { padding: 12px 17px; border: 1px solid #ccd6d0; border-radius: 3px; font-size: 12px; font-weight: 600; transition: background .2s ease, color .2s ease, font-weight .15s ease; }
+.header-link:hover { background: var(--ink); color: white; font-weight: 700; }
+

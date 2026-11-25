@@ -1,0 +1,15 @@
+.site-footer { min-height: 93px; padding: 22px max(6.5vw, 28px); display: flex; align-items: center; justify-content: space-between; gap: 20px; background: var(--ink); color: white; }
+.brand-footer { font-size: 17px; }
+.brand-footer .brand-mark { width: 28px; height: 28px; background: #53a17e; font-size: 16px; }
+.site-footer p, .footer-credit { margin: 0; color: #c4d0ca; font-size: 10px; }
+.footer-about { color: #c4d0ca; font-size: 10px; }
+.footer-about:hover { color: white; text-decoration: underline; }
+.footer-credit span { margin-left: 4px; color: #77c59e; }
+.home-footer { min-height: 76px; }
+.home-footer .brand-footer { gap: 8px; font-size: 14px; }
+.home-footer .brand-footer .brand-mark { width: 23px; height: 23px; font-size: 13px; }
+.footer-links { display: flex; align-items: center; gap: clamp(16px, 3vw, 34px); }
+.footer-links span, .footer-copyright { color: #c4d0ca; font-size: 10px; }
+.footer-copyright { white-space: nowrap; }
+
+
