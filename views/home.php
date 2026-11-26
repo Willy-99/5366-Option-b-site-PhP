@@ -4,34 +4,29 @@
 $pageDescription = 'TomTroc met en relation les lecteurs pour partager et échanger leurs livres.';
 require __DIR__ . '/partials/head.php';
 ?>
-<body>
+<body class="page-home">
     <?php require __DIR__ . '/partials/header.php'; ?>
 
     <main>
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero-copy">
-                <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> La bibliothèque qui circule</p>
                 <h1 id="hero-title">Rejoignez nos lecteurs passionnés</h1>
                 <p class="hero-intro">Donnez une nouvelle vie à vos livres en les échangeant avec d'autres amoureux de la lecture. Nous croyons en la magie du partage de connaissances et d'histoires à travers les livres.</p>
-                <a class="button button-green" href="index.php?page=livres">Découvrir <span aria-hidden="true">→</span></a>
-                <p class="hero-note">Des histoires à lire. Des lecteurs à rencontrer.</p>
+                <a class="button button-green" href="index.php?page=livres">Découvrir</a>
             </div>
 
             <div class="hero-art hero-photo">
-                <img src="public/images/etal-livres-occasion.jpg" alt="Étal de livres d’occasion proposés à la vente, prêts à trouver de nouveaux lecteurs">
-                <a class="image-credit" href="https://unsplash.com/photos/second-hand-books-for-sale-on-a-wooden-market-stall-IXB4T7_5eEw" target="_blank" rel="noopener noreferrer">Photo : Dhiemas Afif Febriyan / Unsplash</a>
+                <img src="public/images/home-bookshop-hamza.png" alt="Un homme lit devant une librairie remplie de livres d’occasion">
+                <span class="image-credit">Hamza</span>
             </div>
         </section>
 
         <section class="catalogue section-wrap" id="catalogue" aria-labelledby="catalogue-title">
             <div class="section-heading">
-                <div>
-                    <p class="eyebrow">À découvrir en ce moment</p>
-                    <h2 id="catalogue-title">Des livres, des histoires.</h2>
-                </div>
+                <h2 id="catalogue-title">Les derniers livres ajoutés</h2>
             </div>
 
-            <div class="book-grid">
+            <div class="book-grid home-book-grid">
                 <?php if ($livres === []): ?>
                     <p class="empty-results">Aucun livre n’a encore été proposé à l’échange.</p>
                 <?php else: ?>
@@ -50,7 +45,7 @@ require __DIR__ . '/partials/head.php';
                                 <div>
                                     <h3><a href="index.php?page=livre&amp;id=<?= $livre->getId() ?>"><?= htmlspecialchars($livre->getTitle(), ENT_QUOTES, 'UTF-8') ?></a></h3>
                                     <p><?= htmlspecialchars($livre->getAuthor(), ENT_QUOTES, 'UTF-8') ?></p>
-                                    <p class="book-seller">Proposé par <?= htmlspecialchars($livre->getSellerPseudo(), ENT_QUOTES, 'UTF-8') ?></p>
+                                    <p class="book-seller">Vendu par : <?= htmlspecialchars($livre->getSellerPseudo(), ENT_QUOTES, 'UTF-8') ?></p>
                                 </div>
                                 <span class="available">Disponible</span>
                             </div>
@@ -59,32 +54,31 @@ require __DIR__ . '/partials/head.php';
                 <?php endif; ?>
             </div>
             <div class="catalogue-actions">
-                <a class="button button-green" href="index.php?page=livres">Voir tous les livres <span aria-hidden="true">→</span></a>
+                <a class="button button-green" href="index.php?page=livres">Voir tous les livres</a>
             </div>
-            <p class="catalogue-footnote">Aperçu de livres proposés par la communauté.</p>
         </section>
 
         <section class="how-it-works" id="fonctionnement" aria-labelledby="how-title">
             <div class="section-wrap how-inner">
                 <div class="how-heading">
-                    <h2 id="how-title">Comment ça marche</h2>
+                    <h2 id="how-title">Comment ça marche ?</h2>
                     <p class="how-intro">Échanger des livres avec TomTroc c'est simple et amusant ! Suivez ces étapes pour commencer :</p>
                 </div>
                 <ol class="steps">
-                    <li><span class="step-number">01</span><p>Inscrivez-vous gratuitement sur notre plateforme.</p></li>
-                    <li><span class="step-number">02</span><p>Ajoutez les livres que vous souhaitez échanger à votre profil.</p></li>
-                    <li><span class="step-number">03</span><p>Parcourez les livres disponibles chez d'autres membres.</p></li>
-                    <li><span class="step-number">04</span><p>Proposez un échange et discutez avec d'autres passionnés de lecture.</p></li>
+                    <li><p>Inscrivez-vous gratuitement sur notre plateforme.</p></li>
+                    <li><p>Ajoutez les livres que vous souhaitez échanger à votre profil.</p></li>
+                    <li><p>Parcourez les livres disponibles chez d'autres membres.</p></li>
+                    <li><p>Proposez un échange et discutez avec d'autres passionnés de lecture.</p></li>
                 </ol>
                 <div class="how-actions">
-                    <a class="button button-light" href="index.php?page=livres">Voir tous les livres <span aria-hidden="true">→</span></a>
+                    <a class="button button-light" href="index.php?page=livres">Voir tous les livres</a>
                 </div>
             </div>
         </section>
 
         <section class="values-section" aria-labelledby="values-title">
             <figure class="values-banner">
-                <img src="public/images/livres-bibliotheque.jpg" alt="Rayonnages remplis de livres dans une bibliothèque" loading="lazy">
+                <img src="public/images/values-library-banner.png" alt="Une lectrice devant des rayonnages de livres" loading="lazy">
             </figure>
             <article class="section-wrap values-article">
                 <h2 id="values-title">Nos valeurs</h2>

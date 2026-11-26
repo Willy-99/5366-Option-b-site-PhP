@@ -5,8 +5,7 @@
     .header-link { padding: 10px 12px; font-size: 11px; }
     .hero { grid-template-columns: 1fr 1fr; }
     .hero-copy { padding: 60px 7vw; }
-    .hero-art { min-height: 450px; }
-    .hero-photo img { min-height: 450px; }
+    .hero-art { min-height: 580px; }
     .book-grid { grid-template-columns: repeat(2, 1fr); row-gap: 28px; }
     .cover { height: 300px; }
     .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -21,14 +20,18 @@
     .main-nav { width: 100%; order: 3; justify-content: flex-start; gap: 25px; margin: 0; padding-top: 5px; font-size: 10px; }
     .hero { grid-template-columns: 1fr; }
     .hero-copy { padding: 60px 8vw 48px; }
-    .hero h1 { font-size: clamp(43px, 12vw, 61px); }
-    .hero-art { min-height: 390px; }
-    .hero-photo img { min-height: 390px; max-height: 460px; }
+    .hero h1 { height: auto; min-height: 96px; font-size: 36px; }
+    .hero-intro { height: auto; min-height: 95px; }
+    .hero-art { min-height: 0; padding: 0 0 34px; }
+    .hero-photo { min-height: 0; }
+    .hero-photo img { width: min(404px, 82%); }
+    .hero-photo .image-credit { width: min(404px, 82%); }
     .section-wrap { width: 84%; }
     .catalogue { padding-top: 63px; padding-bottom: 65px; }
     .section-heading { display: block; }
     .text-link { display: inline-block; margin-top: 17px; }
     .book-grid { gap: 23px 13px; }
+    .home-book-grid { gap: 23px 13px; }
     .cover { height: 220px; padding: 16px; }
     .cover-title { font-size: 23px; }
     .book-info { display: block; }

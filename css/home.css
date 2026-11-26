@@ -1,31 +1,68 @@
-.hero { min-height: 520px; display: grid; grid-template-columns: 1fr 1fr; background: #efeee7; }
-.hero-copy { align-self: center; padding: 76px 8vw 76px 13vw; }
+@font-face {
+    font-family: 'Inter';
+    src: url('../public/fonts/inter-latin-300.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
-.hero h1 { max-width: 540px; margin: 0; font-family: var(--serif); font-size: clamp(39px, 4.5vw, 60px); font-weight: 500; line-height: 1.06; letter-spacing: -1.5px; }
+@font-face {
+    font-family: 'Inter';
+    src: url('../public/fonts/inter-latin-ext-300.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../public/fonts/playfair-display-latin-400.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../public/fonts/playfair-display-latin-ext-400.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+.page-home { font-family: 'Inter', Arial, sans-serif; }
+.page-home h1, .page-home h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; }
+
+.hero { min-height: 650px; display: grid; grid-template-columns: 1fr 1fr; background: #efeee7; }
+.hero-copy { align-self: center; display: flex; flex-direction: column; align-items: flex-start; padding: 76px 8vw 76px 13vw; text-align: left; }
+
+.hero h1 { display: flex; width: min(329px, 100%); height: 96px; align-items: center; justify-content: flex-start; margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 36px; font-weight: 400; line-height: 1.2; letter-spacing: 0; text-align: left; }
 .hero h1 em, .how-heading h2 em { color: var(--green); font-weight: 500; }
-.hero-intro { max-width: 430px; margin: 22px 0 27px; color: #65736e; font-size: 14px; line-height: 1.8; }
+.hero-intro { display: flex; width: min(328px, 100%); height: 95px; align-items: center; justify-content: flex-start; margin: 18px 0 25px; color: #65736e; font-family: 'Inter', Arial, sans-serif; font-size: 16px; font-weight: 300; line-height: 1.5; text-align: left; }
 
-.hero-note { margin: 16px 0 0; color: #78837f; font-size: 10px; }
+.hero-art { position: relative; display: grid; place-items: center; overflow: hidden; min-height: 650px; background: #efeee7; }
+.hero-photo { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; overflow: visible; }
+.hero-photo img { display: block; width: min(404px, 76%); height: auto; aspect-ratio: 404 / 539; object-fit: cover; }
+.hero-photo .image-credit { position: static; width: min(404px, 76%); margin: 0; padding: 0; background: transparent; color: #8b8b82; font-size: 9px; text-align: right; }
 
-.hero-art { position: relative; display: grid; place-items: center; overflow: hidden; min-height: 520px; background: #d9e1d8; }
-.hero-photo { display: block; }
-.hero-photo img { display: block; width: 100%; height: 100%; min-height: 520px; object-fit: cover; }
 
-
-.how-it-works { padding: 82px 0 88px; background: #e9eee7; }
+.how-it-works { padding: 82px 0 88px; background: var(--paper); }
 .how-inner { display: block; }
-.how-heading { max-width: 760px; margin: 0 auto 38px; text-align: center; }
+.how-heading { max-width: 760px; margin: 0 auto 34px; text-align: center; }
 .how-heading h2 { line-height: 1.25; }
 .how-intro { max-width: 620px; margin: 16px auto 0; color: #687771; font-size: 14px; line-height: 1.7; }
-.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin: 0; padding: 0; list-style: none; }
-.steps li { min-height: 190px; padding: 24px; background: var(--white); border: 1px solid #dce4da; }
-.step-number { display: grid; width: 36px; height: 36px; margin-bottom: 22px; place-items: center; border-radius: 50%; background: #e4eee7; color: var(--green-dark); font-family: var(--serif); font-size: 15px; font-style: italic; }
-.steps p { margin: 0; color: #52645d; font-size: 13px; font-weight: 600; line-height: 1.65; }
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; max-width: 970px; margin: 0 auto; padding: 0; list-style: none; }
+.steps li { min-height: 142px; padding: 24px 20px; display: grid; place-items: center; background: var(--white); border: 1px solid #eeede7; }
+.steps p { max-width: 190px; margin: 0; color: #52645d; font-size: 13px; font-weight: 400; line-height: 1.65; text-align: center; }
 .how-actions { display: flex; justify-content: center; margin-top: 34px; }
 
 .values-section { padding: 0 0 92px; background: var(--white); }
-.values-banner { height: clamp(180px, 23vw, 320px); margin: 0 0 58px; overflow: hidden; background: #d9e1d8; }
-.values-banner img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 50%; }
+.values-banner { width: 100%; aspect-ratio: 1440 / 230; margin: 0 0 82px; overflow: hidden; background: #d9e1d8; }
+.values-banner img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .values-article { max-width: 360px; text-align: center; }
 .values-article h2 { margin-bottom: 24px; }
 .values-article > p:not(.values-signature):not(.values-highlight) { margin: 0 auto 18px; color: #52645d; font-size: 16px; line-height: 1.85; text-align: justify; hyphens: auto; }
