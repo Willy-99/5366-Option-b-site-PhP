@@ -13,8 +13,8 @@
 .brand { display: inline-flex; align-items: center; gap: 10px; font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 600; letter-spacing: -.7px; white-space: nowrap; color: var(--green); text-decoration: none; }
 .brand-mark { position: relative; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; gap: 1px; border-radius: 8.5px; background: var(--green); color: white; font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 600; font-style: normal; }
 .brand-mark span { position: relative; font: size 15px; line-height: 1; }
-.brand-mark span:first-child { left: 10px; top: 7px; }
-.brand-mark span:last-child { left: 21px; top: 19px; }
+.brand-mark span:first-child { left: 10px; top: 5px; }
+.brand-mark span:last-child { left: 5px; top: 22px; }
 .main-nav { display: flex; align-items: center; gap: 28px; margin-left: 18px; color: #5b6b65; font-size: 13px; }
 .main-nav a { transition: color .2s ease, font-weight .15s ease; }
 .main-nav a:hover, .main-nav .is-current { color: var(--green-dark); }
