@@ -1,6 +1,6 @@
 <header class="site-header">
     <a class="brand" href="index.php" aria-label="TomTroc, accueil">
-        <span class="brand-mark" aria-hidden="true">t.</span>
+        <span class="brand-mark" aria-hidden="true"><span>T</span><span>T</span></span>
         <span>TomTroc</span>
     </a>
 
