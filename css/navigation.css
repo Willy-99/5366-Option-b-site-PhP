@@ -23,9 +23,10 @@
 .main-nav a:hover { font-weight: 700; }
 .header-actions { display: flex; align-items: center; gap: 13px; }
 .header-actions { margin-left: auto; }
-.header-login { display: inline-flex; align-items: center; gap: 7px; color: #52645d; font-size: 12px; font-weight: 600; transition: color .2s ease, font-weight .15s ease; }
+.header-login { display: inline-flex; align-items: center; gap: 7px; color: #52645d; font-family: 'Inter', Arial, sans-serif; font-size: 14px; font-weight: 400; transition: color .2s ease, font-weight .15s ease; }
 .header-icon { width: 17px; height: 17px; flex: 0 0 auto; }
 .header-login:hover { color: var(--green-dark); font-weight: 700; }
-.header-link { padding: 12px 17px; border: 1px solid #ccd6d0; border-radius: 3px; font-size: 12px; font-weight: 600; transition: background .2s ease, color .2s ease, font-weight .15s ease; }
+.header-link { padding: 12px 17px; border: 1px solid #ccd6d0; border-radius: 3px; font-family: 'Inter', Arial, sans-serif; font-size: 14px; font-weight: 400; transition: background .2s ease, color .2s ease, font-weight .15s ease; }
 .header-link:hover { background: var(--ink); color: white; font-weight: 700; }
+.message-count { min: width 20px; height: 18px; padding: 0 5px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; background: #111; color: #fff; font-size: 10px; font-weight: 600; line-height: 1; }
 
