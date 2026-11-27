@@ -15,8 +15,10 @@
 .brand-mark span { position: relative; font: size 15px; line-height: 1; }
 .brand-mark span:first-child { left: 11px; top: 4px; }
 .brand-mark span:last-child { right: 11px; bottom: 4px; }
-.main-nav { display: flex; align-items: center; gap: 28px; margin-left: 18px; color: #5b6b65; font-size: 13px; }
+.main-nav { display: flex; align-items: center; gap: 28px; font-family: 'Inter', Arial, sans-serif; font-size: 14px; margin-left: 18px; color: #5b6b65; }
 .main-nav a { transition: color .2s ease, font-weight .15s ease; }
+.main-nav a:first-child { font-weight: 600; }
+.main-nav a:last-child { font-weight: 400; }
 .main-nav a:hover, .main-nav .is-current { color: var(--green-dark); }
 .main-nav a:hover { font-weight: 700; }
 .header-actions { display: flex; align-items: center; gap: 13px; }
