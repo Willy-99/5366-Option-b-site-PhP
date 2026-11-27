@@ -26,13 +26,21 @@
 	Messagerie
     <span class="message-count" aria-label="4 messages non lus">4</span>
 </a>
-        <a class="header-login" href="index.php?page=compte">
-            <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="8" r="3.2" />
-                <path d="M5.5 20a6.5 6.5 0 0 1 13 0" />
-            </svg>
-            Mon compte
-        </a>
+    <a class="header-login" href="index.php?page=compte">
+        <svg class="header-icon account-icon"
+            width="10"
+            height="13"
+            viewBox="0 0 10 13"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+                <mask id="stroke0_43429_914" fill="white">
+                    <path d="M4.64258 9.28613C7.20652 9.28613 9.28576 10.117 9.28613 11.1426C9.28613 12.1683 7.20676 13 4.64258 13C2.07853 12.9999 0 12.1682 0 11.1426C0.000376996 10.1171 2.07876 9.28619 4.64258 9.28613ZM4.64258 0C7.20666 0 9.28598 2.07853 9.28613 4.64258C9.28613 7.20676 7.20676 9.28613 4.64258 9.28613C2.07853 9.28598 0 7.20666 0 4.64258C0.000150744 2.07862 2.07862 0.000150744 4.64258 0Z"/>
+                </mask>
+                <path d="M4.64258 9.28613C7.20652 9.28613 9.28576 10.117 9.28613 11.1426C9.28613 12.1682 7.20676 13 4.64258 13C2.07853 12.9999 0 12.1682 0 11.1426C0.000376996 10.1171 2.07876 9.28619 4.64258 9.28613ZM4.64258 9.28613C7.20676 9.28613 9.28613 7.20676 9.28613 4.64258C9.28598 2.07853 7.20666 0 4.64258 0C2.07862 0.000150744 0.000150744 2.07862 0 4.64258C0 7.20666 2.07853 9.28598 4.64258 9.28613Z" stroke-width="1.42" stroke="#292929" mask="url(#stroke0_43429_914)"/>
+        </svg>
+        Mon compte
+    </a>
         <a class="header-link" href="index.php?page=connexion">Connexion</a>
     </div>
 </header>
